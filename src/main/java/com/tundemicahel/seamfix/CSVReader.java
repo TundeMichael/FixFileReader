@@ -20,7 +20,9 @@ import javax.jms.Queue;
 /**
  *
  * @author Michael.Orokola
+ * 
  */
+
 @Singleton
 @Startup
 public class CSVReader {
@@ -34,7 +36,7 @@ public class CSVReader {
     int count = 0;
 
     //@Schedule(minute = "*/1", hour = "*", persistent = false)
-    @Schedule(second = "*/10", minute = "*", hour = "*", persistent = false)
+    @Schedule(minute = "*/30", hour = "*", persistent = false)
     public void readFile() {
         String csvFile = "C:/Users/Michael.orokola.ETRANZACT/Downloads/Soap UI/subscribers.csv";
         BufferedReader br;
@@ -46,7 +48,7 @@ public class CSVReader {
         try {
             br = new BufferedReader(new FileReader(csvFile));
             while ((line = br.readLine()) != null) {
-                String[] subscribers = line.split(split);  
+                String[] subscribers = line.split(split);
                 s = new Subscriber(subscribers[0].trim().replaceAll("\"", ""),
                         subscribers[1].trim().replaceAll("\"", ""),
                         subscribers[2].trim().replaceAll("\"", ""),
@@ -71,3 +73,4 @@ public class CSVReader {
     }
 
 }
+
