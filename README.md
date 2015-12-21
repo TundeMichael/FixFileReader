@@ -8,3 +8,8 @@ CSV File Reader, XML File Writer, JMS Queue, REST endpoint to retrieve subscribe
  JMS Queue: seamFixQueue JMS Queue Connection Factory: seamFixConFact
 
  Also change the file location for both the CSV file and the XML files in the classes CSVReader and XmlCreator to a location on your system
+
+The REST endpoint can be accessed at http://localhost:8080/SeamFix/api/subscribers/{phoneNo} 
+where {phoneNo} is a placeholder for the subscriber's phone number.
+
+Please see the subscribers.csv for the subscribers used.
