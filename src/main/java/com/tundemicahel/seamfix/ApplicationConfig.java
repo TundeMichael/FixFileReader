@@ -1,11 +1,11 @@
-package com.tundemicahel.seamfix;
+package com.tundemichael.reader;
 
 import java.util.Set;
 import javax.ws.rs.core.Application;
 
 /**
  *
- * @author Michael.Orokola
+ * @author Tunde Michael
  */
 @javax.ws.rs.ApplicationPath("api")
 public class ApplicationConfig extends Application {
