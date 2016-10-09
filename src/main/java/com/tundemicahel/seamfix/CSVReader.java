@@ -1,4 +1,4 @@
-package com.tundemicahel.seamfix;
+package com.tundemichael.reader;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -19,7 +19,7 @@ import javax.jms.Queue;
 
 /**
  *
- * @author Michael.Orokola
+ * @author Tunde Michael
  * 
  */
 
@@ -27,10 +27,10 @@ import javax.jms.Queue;
 @Startup
 public class CSVReader {
 
-    @Resource(mappedName = "jms/seamFixQueue")
+    @Resource(mappedName = "jms/readerQueue")
     private Queue seamFixQueue;
     @Inject
-    @JMSConnectionFactory("jms/seamFixConFact")
+    @JMSConnectionFactory("jms/readerConFact")
     private JMSContext context;
     private static final Logger LOG = Logger.getLogger(CSVReader.class.getName());
     int count = 0;
@@ -38,7 +38,7 @@ public class CSVReader {
     //@Schedule(minute = "*/1", hour = "*", persistent = false)
     @Schedule(minute = "*/30", hour = "*", persistent = false)
     public void readFile() {
-        String csvFile = "C:/Users/Michael.orokola.ETRANZACT/Downloads/Soap UI/subscribers.csv";
+        String csvFile = "C:/Users/TundeMichael/Downloads/Soap UI/subscribers.csv";
         BufferedReader br;
         String line;
         String split = ",";
