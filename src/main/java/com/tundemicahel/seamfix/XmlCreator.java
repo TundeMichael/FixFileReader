@@ -1,4 +1,4 @@
-package com.tundemicahel.seamfix;
+package com.tundemichael.reader;
 
 import java.io.File;
 import java.util.logging.Level;
@@ -20,7 +20,7 @@ import javax.xml.bind.Marshaller;
  */
 @MessageDriven(activationConfig = {
     @ActivationConfigProperty(propertyName = "destinationType", propertyValue = "javax.jms.Queue"),
-    @ActivationConfigProperty(propertyName = "destinationLookup", propertyValue = "jms/seamFixQueue")
+    @ActivationConfigProperty(propertyName = "destinationLookup", propertyValue = "jms/readerQueue")
 })
 public class XmlCreator implements MessageListener {
 
@@ -32,7 +32,7 @@ public class XmlCreator implements MessageListener {
             if (message instanceof ObjectMessage) {
                 ObjectMessage msg = (ObjectMessage) message;
                 Subscriber sub = (Subscriber) msg.getObject();
-                File file = new File("C:/Users/Michael.orokola.ETRANZACT/Documents/SeamFix/"
+                File file = new File("C:/Users/TundeMichael/Documents/Reader/"
                 + sub.getPhone() + ".xml");
                 JAXBContext jaxbContext = JAXBContext.newInstance(Subscriber.class);
                 Marshaller jaxbMarshaller = jaxbContext.createMarshaller();
