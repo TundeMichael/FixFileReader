@@ -1,4 +1,4 @@
-package com.tundemicahel.seamfix;
+package com.tundemichael.reader;
 
 import java.io.File;
 import java.util.logging.Level;
@@ -38,7 +38,7 @@ public class SubscribersResource {
     @Produces("application/xml")
     public Response getSubscriber(@PathParam("phone") String phone) {
         try {
-            File file = new File("C:/Users/Michael.orokola.ETRANZACT/Documents/SeamFix/"
+            File file = new File("C:/Users/TundeMichael/Documents/Reader/"
                     + phone.trim() + ".xml");
             JAXBContext jaxbContext = JAXBContext.newInstance(Subscriber.class);
             Unmarshaller jaxbUnmarshaller = jaxbContext.createUnmarshaller();
