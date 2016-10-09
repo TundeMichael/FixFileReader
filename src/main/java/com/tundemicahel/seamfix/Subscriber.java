@@ -1,4 +1,4 @@
-package com.tundemicahel.seamfix;
+package com.tundemichael.reader;
 
 import java.io.Serializable;
 import javax.xml.bind.annotation.XmlAttribute;
